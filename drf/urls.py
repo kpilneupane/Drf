@@ -16,8 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import TemplateView
 
 urlpatterns = [
     url('admin/', admin.site.urls),
     path('players/', include('players.urls')),
+    path('',TemplateView.as_view(template_name='index.html')),
 ]
